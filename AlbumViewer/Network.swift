@@ -10,7 +10,7 @@ import Foundation
 
 struct Network {
 
-    func getAlbums() {
+    static func getAlbums() {
         let url = URL(string: "https://itunes.apple.com/search?term=the+beatles&limit=25")
 
         let session = URLSession(configuration: .default)

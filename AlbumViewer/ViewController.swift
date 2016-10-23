@@ -15,7 +15,7 @@ class ViewController: UIViewController {
 
         // Do any additional setup after loading the view.
 
-        Network().getAlbums()
+        Network.getAlbums()
     }
 
     override func didReceiveMemoryWarning() {
