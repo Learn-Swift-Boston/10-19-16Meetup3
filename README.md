@@ -3,8 +3,8 @@ This is an empty project, just as if you'd started a Single View Application usi
 
 The steps to making this project:
 
-0. start new project (you are here)
-1. download itunes data
+0. ~~start new project~~
+1. download itunes data (you are here)
 2. create collection view cell for each album
 3. create a custom cell with default image for each album
 4. download album artwork and replace default image with it
