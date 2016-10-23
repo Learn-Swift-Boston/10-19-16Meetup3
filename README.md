@@ -1,5 +1,4 @@
-Make a Collection View Controller Cell. `File -> New -> File -> Cocoa Touch Class` and make your file a subclass of UICollectionViewCell (check the XIB box). 
-
+Make a Collection View Controller Cell. `File -> New -> File -> Cocoa Touch Class` and make your file a subclass of UICollectionViewCell (check the XIB box). Register the nib with the collection view, add an image to your custom cell, and make sure you have all the identifiers set right.
 
 
 The steps to making this project:
