@@ -50,9 +50,15 @@ class CollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CollectionViewCell
     
         // Configure the cell
+
+        Network.getArtwork(urlString: albumUrls![indexPath.row]) { (imageData) in
+            DispatchQueue.main.async {
+                cell.imageView.image = UIImage(data: imageData!)
+            }
+        }
     
         return cell
     }

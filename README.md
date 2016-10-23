@@ -1,4 +1,4 @@
-Add some networking code to pull down the image for each album and apply it to our new custom cell (from the last step). The way I've done it isn't necessary the best, most performant, way. Can you figure out a better place to do it?
+Add some networking code to pull down the image for each album and apply it to our new custom cell (from the last step). The way I've done it isn't necessary the best, most performant, way. Can you figure out a better place to do it? Can you also find a more secure way to download the album images?
 
 
 The steps to making this project:

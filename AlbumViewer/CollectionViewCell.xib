@@ -24,6 +24,9 @@
                 <constraint firstItem="xU6-Gu-A1D" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="bvm-Iz-u2Y"/>
                 <constraint firstAttribute="bottom" secondItem="xU6-Gu-A1D" secondAttribute="bottom" id="vwA-uR-Z0I"/>
             </constraints>
+            <connections>
+                <outlet property="imageView" destination="xU6-Gu-A1D" id="ir7-l5-CgC"/>
+            </connections>
         </collectionViewCell>
     </objects>
     <resources>
