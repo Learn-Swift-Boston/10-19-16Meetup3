@@ -13,6 +13,7 @@ private let reuseIdentifier = "Cell"
 class CollectionViewController: UICollectionViewController {
 
     var albums: [Album]?
+//    var selectedCell: CollectionViewCell?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,11 +60,35 @@ class CollectionViewController: UICollectionViewController {
                 cell.imageView.image = UIImage(data: imageData!)
             }
         }
-    
+
+        if cell.isSelected {
+            cell.albumTitleLabel.text = self.albums![indexPath.row].title
+            cell.albumYearLabel.text = self.albums![indexPath.row].year
+            return cell
+        } else {
+            cell.albumTitleLabel.text = ""
+            cell.albumYearLabel.text = ""
+        }
+
         return cell
     }
 
+
     // MARK: UICollectionViewDelegate
 
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
+        if let cell = self.collectionView(self.collectionView!, cellForItemAt: indexPath) as? CollectionViewCell {
+            cell.albumTitleLabel.text = self.albums?[indexPath.row].title
+            cell.albumYearLabel.text = self.albums?[indexPath.row].year
+        }
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+
+        if let cell = self.collectionView(self.collectionView!, cellForItemAt: indexPath) as? CollectionViewCell {
+            cell.albumTitleLabel.text = ""
+            cell.albumYearLabel.text = ""
+        }
+    }
 }
