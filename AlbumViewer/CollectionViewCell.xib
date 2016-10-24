@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,16 +16,34 @@
                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8n-7O-RfW">
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h22-ge-dKb">
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swift" translatesAutoresizingMaskIntoConstraints="NO" id="xU6-Gu-A1D"/>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="h22-ge-dKb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leadingMargin" id="1cx-pf-Gq4"/>
+                <constraint firstItem="K8n-7O-RfW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="topMargin" id="7db-of-W7Z"/>
                 <constraint firstItem="xU6-Gu-A1D" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Gsa-Ip-qPb"/>
+                <constraint firstAttribute="trailingMargin" secondItem="h22-ge-dKb" secondAttribute="trailing" id="KiJ-rk-hgt"/>
+                <constraint firstAttribute="trailingMargin" secondItem="K8n-7O-RfW" secondAttribute="trailing" id="L7q-mZ-kvP"/>
                 <constraint firstAttribute="trailing" secondItem="xU6-Gu-A1D" secondAttribute="trailing" id="PP4-OF-5vp"/>
+                <constraint firstItem="K8n-7O-RfW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leadingMargin" id="Q9k-bL-PK8"/>
                 <constraint firstItem="xU6-Gu-A1D" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="bvm-Iz-u2Y"/>
                 <constraint firstAttribute="bottom" secondItem="xU6-Gu-A1D" secondAttribute="bottom" id="vwA-uR-Z0I"/>
+                <constraint firstItem="h22-ge-dKb" firstAttribute="bottom" secondItem="gTV-IL-0wX" secondAttribute="bottomMargin" id="yoZ-LD-ytj"/>
             </constraints>
             <connections>
+                <outlet property="albumTitleLabel" destination="K8n-7O-RfW" id="21o-XM-yQh"/>
+                <outlet property="albumYearLabel" destination="h22-ge-dKb" id="ZJV-yu-Y1Q"/>
                 <outlet property="imageView" destination="xU6-Gu-A1D" id="ir7-l5-CgC"/>
             </connections>
         </collectionViewCell>
