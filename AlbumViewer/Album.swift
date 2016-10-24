@@ -23,7 +23,7 @@ struct Album {
         }
 
         self.title = title
-        self.year = dateString.substring(to: dateString.index(dateString.startIndex, offsetBy: 3))
+        self.year = dateString.substring(to: dateString.index(dateString.startIndex, offsetBy: 4))
         self.artWorkUrlString = artWorkUrlString
     }
 }
