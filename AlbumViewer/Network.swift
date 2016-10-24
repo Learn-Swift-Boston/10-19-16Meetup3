@@ -10,20 +10,20 @@ import Foundation
 
 struct Network {
 
-    static func getAlbums(completion: @escaping ([String]) -> ()) {
+    static func getAlbums(completion: @escaping ([Album]) -> ()) {
         let url = URL(string: "https://itunes.apple.com/search?term=the+beatles&limit=25")
 
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: url!) { data, response, error in
 
-            var stuffToReturn: [String] = []
+            var stuffToReturn = [Album]()
 
             if let json = try? JSONSerialization.jsonObject(with: data!, options: .mutableLeaves) as! [String: Any],
                 let items = json["results"] as? [[String: Any]] {
 
                 items.forEach({ (item) in
-                    if let urlString = item["artworkUrl100"] as? String {
-                        stuffToReturn.append(urlString)
+                    if let album = Album(json: item) {
+                        stuffToReturn.append(album)
                     }
                 })
 

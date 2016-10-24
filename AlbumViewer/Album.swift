@@ -16,7 +16,7 @@ struct Album {
 
 
     init?(json: [String: Any]) {
-        guard let title = json["collectionNme"] as? String,
+        guard let title = json["collectionName"] as? String,
               let dateString = json["releaseDate"] as? String,
               let artWorkUrlString = json["artworkUrl100"] as? String else {
                 return nil

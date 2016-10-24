@@ -12,7 +12,7 @@ private let reuseIdentifier = "Cell"
 
 class CollectionViewController: UICollectionViewController {
 
-    var albumUrls: [String]?
+    var albums: [Album]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +25,9 @@ class CollectionViewController: UICollectionViewController {
 
         // Do any additional setup after loading the view.
         Network.getAlbums { (albums) in
-            self.albumUrls = albums
+
+            self.albums = albums
             self.collectionView?.reloadData()
-            print(self.albumUrls)
         }
     }
 
@@ -46,7 +46,7 @@ class CollectionViewController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.albumUrls?.count ?? 0
+        return self.albums?.count ?? 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -54,7 +54,7 @@ class CollectionViewController: UICollectionViewController {
     
         // Configure the cell
 
-        Network.getArtwork(urlString: albumUrls![indexPath.row]) { (imageData) in
+        Network.getArtwork(urlString: albums![indexPath.row].artWorkUrlString) { (imageData) in
             DispatchQueue.main.async {
                 cell.imageView.image = UIImage(data: imageData!)
             }
