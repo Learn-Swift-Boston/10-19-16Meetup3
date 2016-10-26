@@ -14,9 +14,27 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var albumTitleLabel: UILabel!
     @IBOutlet weak var albumYearLabel: UILabel!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    var album: Album? {
+        didSet {
+            if let album = album {
+                Network.getArtwork(urlString: album.artWorkUrlString) { (imageData) in
+                    DispatchQueue.main.async {
+                        self.imageView.image = UIImage(data: imageData!)
+                    }
+                }
+            }
+        }
     }
 
+    override var isSelected: Bool {
+        didSet {
+            if isSelected {
+                albumTitleLabel.text = album?.title ?? ""
+                albumYearLabel.text = album?.year ?? ""
+            } else {
+                albumTitleLabel.text = ""
+                albumYearLabel.text = ""
+            }
+        }
+    }
 }
